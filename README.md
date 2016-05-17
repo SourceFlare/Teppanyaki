@@ -39,6 +39,5 @@ That's it. It's that simple.
 Some of the data, objects, or code within this project may be subject to legal terms and licenses.
 
 ##### MetOffice Datapoint (Weather Data)
-
     Contains public sector information licensed under the Open Government Licence
 
