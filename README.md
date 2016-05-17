@@ -14,13 +14,13 @@ All three of these take the main all-in-one API files from MetOffice Datapoint, 
 ### Other use cases
 You could use Teppanyaki to log actions from your system or web stack, process emails, package files, light database operations, etc.
 
-# Installation
+## Installation
 
     wget https://github.com/SourceFlare/Teppanyaki/archive/master.zip
     unzip master.zip
     chmod +x teppanyaki-cli.php
 
-# Usage
+## Usage
 
     teppanyaki-cli five_day_forecast\five_day_summarised_forecast_all_sites_all_timesteps ./data/five_day_forecast.json
 
