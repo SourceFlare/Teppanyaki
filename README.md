@@ -13,3 +13,23 @@ All three of these take the main all-in-one API files from MetOffice Datapoint, 
 
 ### Other use cases
 You could use Teppanyaki to log actions from your system or web stack, process emails, package files, light database operations, etc.
+
+# Installation
+
+    wget https://github.com/SourceFlare/Teppanyaki/archive/master.zip
+    unzip master.zip
+    chmod +x cli.php
+
+# Usage
+
+    ./cli.php five_day_forecast\five_day_summarised_forecast_all_sites_all_timesteps ./data/five_day_forecast.json
+
+### What does this mean?
+In Teppnayaki it needs the BOOK, PAGE, and the INGREDIENTS. Here's the deifnition of what these are:
+
+    ./cli.php BOOK\PAGE INGREDIENTS
+    
+##### BOOK        == RECIPE CLASS
+##### PAGE        == RECIPE METHOD
+##### INGREDIENTS == DATA
+
