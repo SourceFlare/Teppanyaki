@@ -35,6 +35,10 @@ In Teppnayaki it needs the BOOK, PAGE, and the INGREDIENTS. Here's the deifnitio
 
 That's it. It's that simple.
 
-##### Legal Notices
+# Legal Notices
+Some of the data, objects, or code within this project may be subject to legal terms and licenses.
+
+##### MetOffice Datapoint (Weather Data)
 
     Contains public sector information licensed under the Open Government Licence
+
