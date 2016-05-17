@@ -48,7 +48,7 @@ class hourly_observations {
 				# Output slice into json file
 				try {
 					
-					file_put_contents ('./data/observations/hourly/' . $site['i'] . '.json', json_encode($tmpSite));
+					file_put_contents ('./data/hourly_observations_' . $site['i'] . '.json', json_encode($tmpSite));
 					
 				} catch (Exception $e) {
 				    echo 'The chef had a problem serving the dish to the customer! [',  $e->getMessage(), "]\n";
