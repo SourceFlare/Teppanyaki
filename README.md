@@ -18,18 +18,19 @@ You could use Teppanyaki to log actions from your system or web stack, process e
 
     wget https://github.com/SourceFlare/Teppanyaki/archive/master.zip
     unzip master.zip
-    chmod +x cli.php
+    chmod +x teppanyaki-cli.php
 
 # Usage
 
-    ./cli.php five_day_forecast\five_day_summarised_forecast_all_sites_all_timesteps ./data/five_day_forecast.json
+    ./teppanyaki-cli five_day_forecast\five_day_summarised_forecast_all_sites_all_timesteps ./data/five_day_forecast.json
 
 ### What does this mean?
 In Teppnayaki it needs the BOOK, PAGE, and the INGREDIENTS. Here's the deifnition of what these are:
 
-    ./cli.php BOOK\PAGE INGREDIENTS
+    ./teppanyaki-cli BOOK\PAGE INGREDIENTS
     
-##### BOOK        == RECIPE CLASS
-##### PAGE        == RECIPE METHOD
-##### INGREDIENTS == DATA
+    BOOK        == Recipe Class
+    PAGE        == Recipe Method
+    INGREDIENTS == Data
 
+That's it. It's that simple.
