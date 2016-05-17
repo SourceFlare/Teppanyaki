@@ -34,3 +34,9 @@ In Teppnayaki it needs the BOOK, PAGE, and the INGREDIENTS. Here's the deifnitio
     INGREDIENTS == Data
 
 That's it. It's that simple.
+
+
+### Legal Notices
+
+Contains public sector information licensed under the Open Government Licence
+

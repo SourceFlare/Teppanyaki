@@ -48,7 +48,7 @@ class three_hour_forecast {
 				# Output slice into json file
 				try {
 					
-					file_put_contents ('./data/forecast/three-hourly/' . $site['i'] . '.json', json_encode($tmpSite));
+					file_put_contents ('./data/three_hourly_forecast_' . $site['i'] . '.json', json_encode($tmpSite));
 					
 				} catch (Exception $e) {
 				    echo 'The chef had a problem serving the dish to the customer! [',  $e->getMessage(), "]\n";

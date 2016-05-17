@@ -13,14 +13,14 @@ class TeppanyakiChef {
 	public static function prepare ($recipe=false, $ingredients=false) {
 				
 		if (!$recipe or !$ingredients)
-			throw new \Exception("Tepenyaki Chef needs the recipe and ingredients to slice 'n' dice!");
+			throw new \Exception("Teppanyaki Chef needs the recipe and ingredients to slice 'n' dice!");
 
 		# Find the book & page
 		$recipe = self::find_recipe_book($recipe);
 		
 		# Cook the recipe!
 		try {
-			$result = $recipe['book']::$recipe['page'] ($ingredients);
+			$result = $recipe['book']::{$recipe['page']} ($ingredients);
 		} catch (Exception $e) {
 			echo 'The chef could not open the cookery book! [',  $e->getMessage(), "]\n";
 		}
@@ -38,8 +38,8 @@ class TeppanyakiChef {
 	 */
 	private static function find_recipe_book ($recipe) {
 
-		if (!recipe or !isset($recipe) or empty($recipe) or !strpos($recipe, '\\'))
-			throw new Exception('The chef could not find the cookery book & page because the information given to him was incorrect!');
+		if (!$recipe or !isset($recipe) or empty($recipe))
+			throw new \Exception('The chef could not find the cookery book & page because the information given to him was incorrect!');
 		
 		# Split Book & Recipe
 		try {
@@ -49,7 +49,7 @@ class TeppanyakiChef {
 		}
 		
 		# Build Recipe Object
-		$out['book'] = __NAMESPACE__ . '\\Recipes\\' . $book;
+		$out['book'] = '\\' . __NAMESPACE__ . '\\Recipes\\' . $book;
 		$out['page'] = $page;
 		
 		return $out;

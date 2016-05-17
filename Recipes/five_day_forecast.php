@@ -49,7 +49,7 @@ class five_day_forecast {
 				# Output slice into json file
 				try {
 					
-					file_put_contents ('./data/forecast/five-day/' . $site['i'] . '.json', json_encode($tmpSite));
+					file_put_contents ('./data/five_day_forecast_' . $site['i'] . '.json', json_encode($tmpSite));
 					
 				} catch (Exception $e) {
 				    echo 'The chef had a problem serving the dish to the customer! [',  $e->getMessage(), "]\n";
@@ -157,7 +157,7 @@ class five_day_forecast {
 			try {
 				
 				# Write data to location file
-				file_put_contents ('./data/forecast/five-day/simplified/' . $site['i'] . '.json', json_encode($tmpSite));
+				file_put_contents ('./data/five_day_simplified_' . $site['i'] . '.json', json_encode($tmpSite));
 			
 				# clear Data
 				$avg=''; $tmpSite='';
