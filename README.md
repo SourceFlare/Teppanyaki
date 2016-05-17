@@ -5,9 +5,9 @@ It offers a bare-bones environment to slice 'n' dice data, then output it into u
 
 ### Provided Examples
 
-##### 1. 5 Day Forecast Location Data
-##### 2. 3-Hourly Forecast Location Date
-##### 3. Hourly Observations (Near-Real-Time)
+    1. 5 Day Forecast Location Data
+    2. 3-Hourly Forecast Location Date
+    3. Hourly Observations (Near-Real-Time)
 
 All three of these take the main all-in-one API files from MetOffice Datapoint, and transpile them into JSON files for each of the 5,000+ UK locations.
 
@@ -22,13 +22,13 @@ You could use Teppanyaki to log actions from your system or web stack, process e
 
 # Usage
 
-    ./teppanyaki-cli five_day_forecast\five_day_summarised_forecast_all_sites_all_timesteps ./data/five_day_forecast.json
+    teppanyaki-cli five_day_forecast\five_day_summarised_forecast_all_sites_all_timesteps ./data/five_day_forecast.json
 
 ### What does this mean?
 In Teppnayaki it needs the BOOK, PAGE, and the INGREDIENTS. Here's the deifnition of what these are:
 
-    ./teppanyaki-cli BOOK\PAGE INGREDIENTS
-    
+    teppanyaki-cli BOOK\PAGE INGREDIENTS
+
     BOOK        == Recipe Class
     PAGE        == Recipe Method
     INGREDIENTS == Data
