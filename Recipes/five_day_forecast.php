@@ -1,10 +1,11 @@
 <?php namespace Teppanyaki\Recipes;
 
+use Teppanyaki\lib\File;
+
 
 class five_day_forecast {
 	
 	protected static $memory_limit = '512M';
-	
 	
 	/**
 	 * Loads all observations file and slices into separate
@@ -19,7 +20,7 @@ class five_day_forecast {
 		ini_set('memory_limit', self::$memory_limit);
 		
 		# Load the JSON file to slice & dice!
-		$json = json_decode(file_get_contents ($ingredients), true);
+		$json = File::load_json_asoc($ingredients);
 		
 		# Run tests on data
 		self::test_ingredients ($json);
@@ -99,7 +100,7 @@ class five_day_forecast {
 					$avg[$date]['Day']['S'] = (float) $day['Rep'][0]['S'];		 # Wind Speed
 					$avg[$date]['Day']['G'] = (float) $day['Rep'][0]['Gn'];	     # Wind Speed (Gusting)
 					$avg[$date]['Day']['H'] = (float) $day['Rep'][0]['Hn'];	     # Hummidity
-					$avg[$date]['Day']['P'] = (float) $day['Rep'][0]['Ppd'];     # Precipitation Probability %
+					$avg[$date]['Day']['P'] = (float) $day['Rep'][0]['PPd'];     # Precipitation Probability %
 					$avg[$date]['Day']['U'] = (float) $day['Rep'][0]['U'];	     # UV Index
 
 				/** Nighttime **/
@@ -110,7 +111,7 @@ class five_day_forecast {
 					$avg[$date]['Night']['S'] = (float) $day['Rep'][1]['S'];     # Wind Speed
 					$avg[$date]['Night']['G'] = (float) $day['Rep'][1]['Gm'];	 # Wind Speed (Gusting)
 					$avg[$date]['Night']['H'] = (float) $day['Rep'][1]['Hm'];	 # Hummidity
-					$avg[$date]['Night']['P'] = (float) $day['Rep'][1]['Ppn'];	 # Precipitation Probability %
+					$avg[$date]['Night']['P'] = (float) $day['Rep'][1]['PPn'];	 # Precipitation Probability %
 					$avg[$date]['Night']['U'] = (float) 0;	                     # UV Index
 								
 				/** Wholeday Averages **/
@@ -121,7 +122,7 @@ class five_day_forecast {
 					$avg[$date]['Whole']['S'] = (float) (($day['Rep'][0]['S']   + $day['Rep'][1]['S'])   / 2);
 					$avg[$date]['Whole']['G'] = (float) (($day['Rep'][0]['Gn']  + $day['Rep'][1]['Gm'])  / 2);
 					$avg[$date]['Whole']['H'] = (float) (($day['Rep'][0]['Hn']  + $day['Rep'][1]['Hm'])  / 2);
-					$avg[$date]['Whole']['P'] = (float) (($day['Rep'][0]['Ppd'] + $day['Rep'][1]['Ppn']) / 2);
+					$avg[$date]['Whole']['P'] = (float) (($day['Rep'][0]['PPd'] + $day['Rep'][1]['PPn']) / 2);
 					$avg[$date]['Whole']['U'] = (float) $day['Rep'][0]['U'];					
 			}			
 
@@ -145,7 +146,7 @@ class five_day_forecast {
 					    'continent' => $site['continent'],
 					    'lat'       => $site['lat'],
 					    'lon'       => $site['lon'],
-					    'elevation' => $site['elevation'],
+					    'elevation' => isset($site['elevation']) ? $site['elevation'] : false,
 						'dataDate'  => $json['SiteRep']['DV']['dataDate'],
 						'type'      => $json['SiteRep']['DV']['type'],
 						'Period'    => $avg
