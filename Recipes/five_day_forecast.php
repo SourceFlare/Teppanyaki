@@ -50,7 +50,7 @@ class five_day_forecast {
 				# Output slice into json file
 				try {
 					
-					file_put_contents ('./data/five_day_forecast_' . $site['i'] . '.json', json_encode($tmpSite));
+					File::save_json ('./data/five_day_forecast_' . $site['i'] . '.json', $tmpSite);
 					
 				} catch (Exception $e) {
 				    echo 'The chef had a problem serving the dish to the customer! [',  $e->getMessage(), "]\n";
@@ -74,7 +74,7 @@ class five_day_forecast {
 		ini_set('memory_limit', self::$memory_limit);
 		
 		# Load the JSON file to slice & dice!
-		$json = json_decode(file_get_contents ($ingredients), true);
+		$json = File::load_json_asoc ($ingredients);
 		
 		# Run tests on data
 		self::test_ingredients ($json);
@@ -158,7 +158,7 @@ class five_day_forecast {
 			try {
 				
 				# Write data to location file
-				file_put_contents ('./data/five_day_simplified_' . $site['i'] . '.json', json_encode($tmpSite));
+				File::save_json ('./data/five_day_simplified_' . $site['i'] . '.json', $tmpSite);
 			
 				# clear Data
 				$avg=''; $tmpSite='';
