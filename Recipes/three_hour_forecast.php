@@ -14,7 +14,7 @@ class three_hour_forecast {
 	 */
 	public static function three_hour_forecast_all_sites_all_timesteps ($ingredients) {
 		if (!$ingredients)
-			throw new \Exception ("The chef has the recipe, but doesn't have any ingredients to make it!");
+			throw new Exception ("The chef has the recipe, but doesn't have any ingredients to make it!");
 		
 		# Set memory limit
 		ini_set('memory_limit', self::$memory_limit);
@@ -50,7 +50,7 @@ class three_hour_forecast {
 				# Output slice into json file
 				try {
 					
-					file_put_contents ('./data/three_hourly_forecast_' . $site['i'] . '.json', json_encode($tmpSite));
+					File::save_json ('./data/three_hourly_forecast_' . $site['i'] . '.json', $tmpSite);
 					
 				} catch (Exception $e) {
 				    echo 'The chef had a problem serving the dish to the customer! [',  $e->getMessage(), "]\n";
@@ -67,7 +67,7 @@ class three_hour_forecast {
 	 */
 	private static function test_ingredients ($json) {
 		if (empty($json) or !isset($json))
-			throw new \Exception ('Ingredients JSON file does not appear to be loaded. The chef is not happy!');
+			throw new Exception ('Ingredients JSON file does not appear to be loaded. The chef is not happy!');
 		
 		if (
 			!isset($json['SiteRep']) or 
@@ -75,7 +75,7 @@ class three_hour_forecast {
 			!isset($json['SiteRep']['DV']['Location']) or 
 			count($json['SiteRep']['DV']['Location']) < 1
 		)
-			throw new \Exception ('Ingredients JSON file does not appear to have the correct items. The chef is not happy!');
+			throw new Exception ('Ingredients JSON file does not appear to have the correct items. The chef is not happy!');
 		
 		return true;
 	}
