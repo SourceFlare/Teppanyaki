@@ -48,7 +48,7 @@ class forecast_site_list {
 					
 		# Output slice into json file
 		try {
-			file_put_contents ('./data/unitary_auth_area_list.json', json_encode($tmpSite));				
+			File::save_json ('./data/unitary_auth_area_list.json', $tmpSite);				
 		} catch (Exception $e) {
 			echo 'The chef had a problem serving the dish to the customer! [',  $e->getMessage(), "]\n";
 		}
@@ -102,7 +102,7 @@ class forecast_site_list {
 						
 			# Output slice into json file
 			try {
-				file_put_contents ('./data/unitary_auth_area_' . str_replace(' ', '_', $UnitaryAuthArea) . '.json', json_encode($tmpSite));				
+				File::save_json ('./data/unitary_auth_area_' . str_replace(' ', '_', $UnitaryAuthArea) . '.json', $tmpSite);				
 			} catch (Exception $e) {
 				echo 'The chef had a problem serving the dish to the customer! [',  $e->getMessage(), "]\n";
 			}
@@ -154,7 +154,7 @@ class forecast_site_list {
 					
 		# Output slice into json file
 		try {
-			file_put_contents ('./data/region_list.json', json_encode($tmpSite));				
+			File::save_json ('./data/region_list.json', $tmpSite);				
 		} catch (Exception $e) {
 			echo 'The chef had a problem serving the dish to the customer! [',  $e->getMessage(), "]\n";
 		}
@@ -208,7 +208,7 @@ class forecast_site_list {
 						
 			# Output slice into json file
 			try {
-				file_put_contents ('./data/region_' . str_replace(' ', '_', $Region) . '.json', json_encode($tmpSite));				
+				File::save_json ('./data/region_' . str_replace(' ', '_', $Region) . '.json', $tmpSite);				
 			} catch (Exception $e) {
 				echo 'The chef had a problem serving the dish to the customer! [',  $e->getMessage(), "]\n";
 			}
