@@ -1,5 +1,7 @@
 <?php namespace Teppanyaki\Recipes;
 
+use Teppanyaki\lib\File;
+
 
 class hourly_observations {
 	
@@ -12,13 +14,13 @@ class hourly_observations {
 	 */
 	public static function hourly_site_observations_all_sites_all_timestamps ($ingredients) {
 		if (!$ingredients)
-			throw new Exception ("The chef has the recipe, but doesn't have any ingredients to make it!");
+			throw new \Exception ("The chef has the recipe, but doesn't have any ingredients to make it!");
 		
 		# Set memory limit
 		ini_set('memory_limit', self::$memory_limit);
 		
 		# Load the JSON file to slice & dice!
-		$json = json_decode(file_get_contents ($ingredients), true);
+		$json = File::load_json_asoc($ingredients);
 		
 		# Run tests on data
 		self::test_ingredients ($json);
@@ -65,7 +67,7 @@ class hourly_observations {
 	 */
 	private static function test_ingredients ($json) {
 		if (empty($json) or !isset($json))
-			throw new Exception ('Ingredients JSON file does not appear to be loaded. The chef is not happy!');
+			throw new \Exception ('Ingredients JSON file does not appear to be loaded. The chef is not happy!');
 		
 		if (
 			!isset($json['SiteRep']) or 
@@ -73,7 +75,7 @@ class hourly_observations {
 			!isset($json['SiteRep']['DV']['Location']) or 
 			count($json['SiteRep']['DV']['Location']) < 1
 		)
-			throw new Exception ('Ingredients JSON file does not appear to have the correct items. The chef is not happy!');
+			throw new \Exception ('Ingredients JSON file does not appear to have the correct items. The chef is not happy!');
 		
 		return true;
 	}
