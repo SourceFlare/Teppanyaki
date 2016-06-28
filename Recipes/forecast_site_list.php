@@ -5,7 +5,7 @@ use Teppanyaki\lib\File;
 
 class forecast_site_list {
 	
-	protected static $memory_limit = '128M';
+	protected static $memoryLimit = '128M';
 	
 	
 	
@@ -20,7 +20,7 @@ class forecast_site_list {
 			throw new \Exception ("The chef has the recipe, but doesn't have any ingredients to make it!");
 		
 		# Set memory limit
-		ini_set('memory_limit', self::$memory_limit);
+		ini_set('memory_limit', self::$memoryLimit);
 		
 		# Load the JSON file to slice & dice!
 		$json = File::load_json_asoc($ingredients);
