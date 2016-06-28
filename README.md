@@ -1,4 +1,7 @@
 # Teppanyaki
+
+[![Code Climate](https://codeclimate.com/github/SourceFlare/Teppanyaki/badges/gpa.svg)](https://codeclimate.com/github/SourceFlare/Teppanyaki) [![Test Coverage](https://codeclimate.com/github/SourceFlare/Teppanyaki/badges/coverage.svg)](https://codeclimate.com/github/SourceFlare/Teppanyaki/coverage) [![Issue Count](https://codeclimate.com/github/SourceFlare/Teppanyaki/badges/issue_count.svg)](https://codeclimate.com/github/SourceFlare/Teppanyaki)
+
 Teppanyaki is a Recipe Dispatcher written in PHP that will run primarily on the command line, but can also integrate into PHP web stacks.
 
 It offers a bare-bones environment to slice 'n' dice data, then output it into useful formats... you write the recipe, the cook does the work.
