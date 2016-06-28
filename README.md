@@ -1,6 +1,6 @@
 # Teppanyaki
 
-[![Code Climate](https://codeclimate.com/github/SourceFlare/Teppanyaki/badges/gpa.svg?s=3423432)](https://codeclimate.com/github/SourceFlare/Teppanyaki) [![Test Coverage](https://codeclimate.com/github/SourceFlare/Teppanyaki/badges/coverage.svg)](https://codeclimate.com/github/SourceFlare/Teppanyaki/coverage) [![Issue Count](https://codeclimate.com/github/SourceFlare/Teppanyaki/badges/issue_count.svg)](https://codeclimate.com/github/SourceFlare/Teppanyaki)
+[![Code Climate](https://codeclimate.com/github/SourceFlare/Teppanyaki/badges/gpa.svg?s=100001)](https://codeclimate.com/github/SourceFlare/Teppanyaki) [![Test Coverage](https://codeclimate.com/github/SourceFlare/Teppanyaki/badges/coverage.svg?s=100001)](https://codeclimate.com/github/SourceFlare/Teppanyaki/coverage) [![Issue Count](https://codeclimate.com/github/SourceFlare/Teppanyaki/badges/issue_count.svg?s=100001)](https://codeclimate.com/github/SourceFlare/Teppanyaki)
 
 Teppanyaki is a Recipe Dispatcher written in PHP that will run primarily on the command line, but can also integrate into PHP web stacks.
 
