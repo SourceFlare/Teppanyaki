@@ -42,4 +42,3 @@ That's it. It's that simple.
 ### Legal Notices
 
 Contains public sector information licensed under the Open Government Licence
-
