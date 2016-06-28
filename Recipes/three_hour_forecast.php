@@ -5,7 +5,7 @@ use Teppanyaki\lib\File;
 
 class three_hour_forecast {
 	
-	protected static $memory_limit = '1024M';
+	protected static $memoryLimit = '1024M';
 
 	/**
 	 * Loads all observations file and slices into separate
@@ -17,7 +17,7 @@ class three_hour_forecast {
 			throw new Exception ("The chef has the recipe, but doesn't have any ingredients to make it!");
 		
 		# Set memory limit
-		ini_set('memory_limit', self::$memory_limit);
+		ini_set('memory_limit', self::$memoryLimit);
 		
 		# Load the JSON file to slice & dice!
 		$json = File::load_json_asoc($ingredients);
