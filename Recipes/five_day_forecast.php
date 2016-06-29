@@ -93,7 +93,6 @@ class five_day_forecast {
 				$date = $day['value'];
 				
 				/** Daytime **/
-				
 					# Max and Feels-Like Max Temps
 					$avg[$date]['Day']['T'] = (float) $day['Rep'][0]['Dm'];      # Maximum Temperature
 					$avg[$date]['Day']['F'] = (float) $day['Rep'][0]['FDm'];     # Feels-Like Maximum Temperature
@@ -104,7 +103,6 @@ class five_day_forecast {
 					$avg[$date]['Day']['U'] = (float) $day['Rep'][0]['U'];	     # UV Index
 
 				/** Nighttime **/
-					
 					# Nighttime Max and Feels-Like Max Temps
 					$avg[$date]['Night']['T'] = (float) $day['Rep'][1]['Nm'];    # Minimum Temperature
 					$avg[$date]['Night']['F'] = (float) $day['Rep'][1]['FNm'];   # Feels-Like Minimum Temperature
@@ -115,7 +113,6 @@ class five_day_forecast {
 					$avg[$date]['Night']['U'] = (float) 0;	                     # UV Index
 								
 				/** Wholeday Averages **/
-					
 					# Wholeday Average of Max and Feels-Like Max Temps
 					$avg[$date]['Whole']['T'] = (float) (($day['Rep'][0]['Dm']  + $day['Rep'][1]['Nm'])  / 2);
 					$avg[$date]['Whole']['F'] = (float) (($day['Rep'][0]['FDm'] + $day['Rep'][1]['FNm']) / 2);
@@ -154,15 +151,12 @@ class five_day_forecast {
 				]
 			];
 			
-			# Output slice into json file
 			try {
-				
 				# Write data to location file
 				File::save_json ('./data/five_day_simplified_' . $site['i'] . '.json', $tmpSite);
-			
+				
 				# clear Data
 				$avg=''; $tmpSite='';
-				
 			} catch (Exception $e) {
 			    echo 'The chef had a problem serving the dish to the customer! [',  $e->getMessage(), "]\n";
 			}
